@@ -8,7 +8,7 @@ const assertEqual = function(actual, expected) {
 };
 
 //Create a function named head that returns the first element in an array.
-const head = function(actual) {
+const head = (actual) => {
     return actual[0]
   }
 
