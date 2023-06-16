@@ -7,9 +7,14 @@ const assertEqual = function(actual, expected) {
   }
 };
 
+//Create a function named head that returns the first element in an array.
+const head = function(actual) {
+    return actual[0]
+  }
+
 // TEST CODE
-assertEqual("Lighthouse Labs", "Bootcamp");
-assertEqual(1, 1);
-assertEqual("Hello", "Hello");
 assertEqual("Hello", "Hi");
-assertEqual(20, 32);
+assertEqual(1, 1);
+assertEqual(head([5, 6, 7]), 5);
+assertEqual(head(["Hello", "Lighthouse", "Labs"]), "Hello");
+
