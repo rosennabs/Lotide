@@ -14,5 +14,5 @@ const tail = (anyArray) => {
 
 // TEST CODE
 assertEqual(tail(["Hello", "Hi"]), ["Hi"]);
-assertEqual(tail(["Hello", "Hi"]), ["Hello", "Hi"]);
+assertEqual(tail(["Hello", "Hi", "World"]), ["Hi", "World"]);
 assertEqual(tail([]), ["Hi"]);

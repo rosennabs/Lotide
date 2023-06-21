@@ -1,23 +1,35 @@
 const assertArraysEqual = function (array1, array2) {
-  console.log(eqArrays(array1, array2));
+  switch (eqArrays(array1, array2)) {
+    case true:
+      console.log("✅ Both arrays are equal");
+      break;
+    case false:
+      console.log("❌ Both arrays are not equal");
+      break;
+  }
 };
+
 
 const eqArrays = (array1, array2) => {
   let newArray1 = "";
   let newArray2 = "";
-  for (let i = 0; i < array1.length; i++) {
-    if (array1[i] === array2[i]) {
-      newArray1 += array1[i];
-      newArray2 += array2[i];
-    } else {
-      return "❌ Both arrays are not equal";
+
+  if (array1.length !== array2.length) {
+    return false;
+  } else {
+    for (let i = 0; i < array1.length; i++) {
+      if (array1[i] === array2[i]) {
+        newArray1 += array1[i];
+        newArray2 += array2[i];
+      } else {
+        return false;
+      }
     }
-  } 
+  }
   if (newArray1 === newArray2) {
-    return "✅ Both arrays are equal";
+    return true;
   }
 }
-
 
 const flatten = function (arrays) {
   let flatArrays = [];
@@ -33,6 +45,10 @@ const flatten = function (arrays) {
   return flatArrays;
 }
 
+
+console.log(flatten([1, 2, [3, 4], 5, [6]]));
+console.log(flatten([1, [2, 3, 4], [5, 9], [6]]));
+console.log(flatten([4, [2], [3, "thrice"]]));
 
 assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5, 6]);
 assertArraysEqual(flatten([1, [2, 3, 4], [5, 9], [6]]), [1, 2, 3, 4, 5, 9, 6]);

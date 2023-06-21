@@ -1,20 +1,32 @@
 const assertArraysEqual = function (array1, array2) {
-  console.log(eqArrays(array1, array2));
+  switch (eqArrays(array1, array2)) {
+    case true:
+      console.log("✅ Both arrays are equal");
+      break;
+    case false:
+      console.log("❌ Both arrays are not equal");
+      break;
+  }
 };
 
 const eqArrays = (array1, array2) => {
   let newArray1 = "";
   let newArray2 = "";
-  for (let i = 0; i < array1.length; i++) {
-    if (array1[i] === array2[i]) {
-      newArray1 += array1[i];
-      newArray2 += array2[i];
-    } else {
-      return "❌ Both arrays are not equal";
+
+  if (array1.length !== array2.length) {
+    return false;
+  } else {
+    for (let i = 0; i < array1.length; i++) {
+      if (array1[i] === array2[i]) {
+        newArray1 += array1[i];
+        newArray2 += array2[i];
+      } else {
+        return false;
+      }
     }
-  } 
+  }
   if (newArray1 === newArray2) {
-    return "✅ Both arrays are equal";
+    return true;
   }
 }
 
@@ -24,9 +36,15 @@ const without = function (source, itemsToRemove) {
     if (!itemsToRemove.includes(source[i])) {
       withoutItems.push(source[i])
     }
-  } 
+  }
   return withoutItems;
 }
+
+
+console.log(without([1, 2, 3], [2]));
+console.log(without([1, 4, 3, "5"], [3, "4"]));
+console.log(without(["0", "2", "3"], ["3"]));
+console.log(without(["Rose", "C", "Okere"], ["C"]));
 
 assertArraysEqual(without([1, 2, 3], [2]), [1, 3]);
 assertArraysEqual(without([1, 4, 3, "5"], [3, "4"]), [1, 4, "5"]);

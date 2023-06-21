@@ -21,13 +21,17 @@ const eqArrays = (array1, array2) => {
 }
 
 //Asserts a response for test code
-const assertArraysEqual = function (actual, expected) {
-  if (eqArrays(actual, expected) === true) {
-    console.log(actual, expected, "✅ Equal arrays");
-  } else {
-    console.log(actual, expected, "❌ Unequal arrays");
+const assertArraysEqual = function (array1, array2) {
+  switch (eqArrays(array1, array2)) {
+    case true:
+      console.log("✅ Equal arrays");
+      break;
+    case false:
+      console.log("❌ Unequal arrays");
+      break;
   }
 };
+
 
 //Gets the middle element(s) in an array
 const middle = function (array) {
@@ -51,6 +55,13 @@ const middle = function (array) {
   }
 };
 
+
+console.log(middle([1]));
+console.log(middle([1, 2]));
+console.log(middle([1, 2, 3]));
+console.log(middle([1, 2, 3, 4, 5]));
+console.log(middle([1, 2, 3, 4]));
+console.log(middle([1, 2, 3, 4, 5, 6]));
 
 //Calls functions and tests code
 assertArraysEqual(middle([1]), []);
