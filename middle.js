@@ -1,38 +1,3 @@
-// Checks if two arrays are equal
-const eqArrays = (array1, array2) => {
-  let newArray1 = "";
-  let newArray2 = "";
-
-  if (array1.length !== array2.length) {
-    return false;
-  } else {
-    for (let i = 0; i < array1.length; i++) {
-      if (array1[i] === array2[i]) {
-        newArray1 += array1[i];
-        newArray2 += array2[i];
-      } else {
-        return false;
-      }
-    }
-  }
-  if (newArray1 === newArray2) {
-    return true;
-  }
-}
-
-//Asserts a response for test code
-const assertArraysEqual = function (array1, array2) {
-  switch (eqArrays(array1, array2)) {
-    case true:
-      console.log("✅ Equal arrays");
-      break;
-    case false:
-      console.log("❌ Unequal arrays");
-      break;
-  }
-};
-
-
 //Gets the middle element(s) in an array
 const middle = function (array) {
 
@@ -56,18 +21,4 @@ const middle = function (array) {
 };
 
 
-console.log(middle([1]));
-console.log(middle([1, 2]));
-console.log(middle([1, 2, 3]));
-console.log(middle([1, 2, 3, 4, 5]));
-console.log(middle([1, 2, 3, 4]));
-console.log(middle([1, 2, 3, 4, 5, 6]));
-
-//Calls functions and tests code
-assertArraysEqual(middle([1]), []);
-assertArraysEqual(middle([1, 2]), []);
-assertArraysEqual(middle([1, 2, 3]), [2]);
-assertArraysEqual(middle([1, 2, 3, 4, 5]), [3]);
-assertArraysEqual(middle([1, 2, 3, 4]), [2, 3]);
-assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]);
-
+module.exports = middle;
