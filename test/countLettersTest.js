@@ -10,10 +10,17 @@ describe("Count Letters", () => {
   it("returns 2 for d in 'door code'", () => {
     assert.strictEqual(result["d"], 2);
   });
+  it("returns 3 for o in 'door code'", () => {
+    assert.strictEqual(result["o"], 3);
+  });
+  it("returns 1 for r in 'door code'", () => {
+    assert.strictEqual(result["r"], 1);
+  });
+  it("returns 1 for c in 'door code'", () => {
+    assert.strictEqual(result["c"], 1);
+  });
+  it("returns 1 for e in 'door code'", () => {
+    assert.strictEqual(result["e"], 1);
+  });
 });
 
-// assertEqual(result["d"], 2);
-// assertEqual(result["o"], 3);
-// assertEqual(result["r"], 1);
-// assertEqual(result["c"], 1);
-// assertEqual(result["e"], 1);
