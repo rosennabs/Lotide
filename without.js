@@ -1,9 +1,9 @@
 //return a subset of a given array, removing unwanted elements
 const without = function (source, itemsToRemove) {
   let withoutItems = [];
-  for (let i = 0; i < source.length; i++) {
-    if (!itemsToRemove.includes(source[i])) {
-      withoutItems.push(source[i])
+  for (const item of source) {
+    if (!itemsToRemove.includes(item)) {
+      withoutItems.push(item)
     }
   }
   return withoutItems;

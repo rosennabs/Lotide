@@ -14,8 +14,6 @@ const findKey = require('./findKey');
 const takeUntil = require('./takeUntil');
 
 
-
-
 module.exports = {
   head,
   tail,
@@ -31,6 +29,4 @@ module.exports = {
   without,
   findKey,
   takeUntil
-
-
 };

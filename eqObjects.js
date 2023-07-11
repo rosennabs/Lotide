@@ -6,13 +6,14 @@ const eqObjects = function (object1, object2) {
   const object2Keys = Object.keys(object2);
 
   if (object1Keys.length === object2Keys.length) {
-    for (item of object1Keys) {
-      if (object1[item] === object2[item] || eqArrays(object1[item], object2[item])) {
-        return true;
-      } else {
+    for (const item of object1Keys) {
+      if (Array.isArray(object1[item]) && Array.isArray(object2[item])) {
+        return eqArrays(object1[item], object2[item]);
+      } else if (object1[item] !== object2[item]) {
         return false;
       }
-    }
+    } 
+    return true;
   } else {
     return false;
   }
